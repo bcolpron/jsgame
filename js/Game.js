@@ -22,5 +22,7 @@ Game.prototype.closeWorld = function(name) {
     return this.curtain.close();
 }
 
-
+Game.prototype.find = function(class_) {
+    return class_.prototype.instances;
+}
 
