@@ -12,7 +12,8 @@ Game.prototype.loadWorld = function(name) {
             this.loadWorld(name);
         },this));
     } else {
-        this.controller = new Controller(worlds[name], this);
+        this.world = worlds[name];
+        this.controller = new Controller(this.world, this);
         this.curtain.open();
     }
 }
