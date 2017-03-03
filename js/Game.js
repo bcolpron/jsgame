@@ -9,7 +9,7 @@ Game.prototype.loadWorld = function(name) {
         this.closeWorld().then($.proxy(function(){
             this.controller.close();
             this.controller = null;
-            this.loadWorld(name);
+            setTimeout($.proxy(this.loadWorld, this, name), 500);
         },this));
     } else {
         this.world = worlds[name];
